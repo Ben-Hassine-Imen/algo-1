@@ -1,0 +1,45 @@
+ALGORITHM PROJECT
+
+
+VAR
+    phrase,choix:STRING;
+    i,nbr,nespaces:integer;
+BEGIN
+   write("Taper une phrase au choix: ")
+   read(phrase):
+ length := phrase.length
+
+
+nbr:=0
+FOR i FROM 0 TO  length-1 STEP step  DO
+    IF (phrase[i]='a' or phrase[i]='e' or phrase[i]='i' or phrase[i]='o' or phrase[i]='u' or phrase[i]='y') THEN
+       nbr:=nbr+1
+    END_IF
+END_FOR
+ return nbr
+
+
+
+ nespaces:=0
+FOR i FROM 0 TO length-1  STEP step  DO
+    IF (phrase[i]=' ' ) THEN
+      nespaces:=nespaces+1
+    END_IF
+END_FOR
+ return nespaces
+
+
+REPEAT
+   write ('votre phrase ',length,'caractères')
+   write ('votre phrase contient',nbr,'voyelle(s)')
+   write ('votre phrase contient',nespaces+1,'mot(s)')
+
+ write('oui:entrer une nouvelle phrase.non:quitter le programme')
+ read (choix)
+UNTIL (choix='non')
+
+  
+
+
+
+END PROJECT
